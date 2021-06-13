@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Calibri, serif;
+    font-weight: 400;
+    --theme-color: #ab40e5;
+}
+
+#task-list {
+    list-style: none;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.delete-btn {
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    float: right;
+    background-image: url("cross.png");
+    background-color: white;
+    background-size: cover;
+    width: 2em;
+    height: 2em;
+}
+
+.task {
+    font-size: 20px;
+}
+
+.checkbox {
+    margin-right: 20px;
+    transform: scale(1.5);
+}
+
+.checkbox:checked {
+    color: var(--theme-color);
+}
+
+#header {
+    text-align: center;
+    padding: .5em;
+}
+
+#add-task {
+    width: 800px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#input-task {
+    border: none;
+    outline: none;
+    border-bottom: var(--theme-color) solid 2px;
+    width: 85%;
+    font-size: 20px;
+    padding: .2em;
+    caret-color: var(--theme-color);
+}
+
+#add-task-button {
+    cursor: pointer;
+    padding: .8em 1.6em;
+    background-color: #ac77bf;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: var(--theme-color);
+    border-radius: 3px;
+    font-size: 14px;
+    transition: .3s background-color;
+}
+
+#add-task-button:hover {
+    background-color: var(--theme-color);
+}
+
+li {
+    padding: 20px 0;
+    width: 100%;
+    display: block;
+    animation-name: hide;
+    animation-duration: 1s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+        height: auto;
+        line-height: normal;
+        padding: 20px 0;
+        margin: auto;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    #header {
+        font-size: 48px;
+    }
+
+    .task {
+        font-size: 40px;
+    }
+
+    #input-task {
+        font-size: 40px;
+        width: 70%;
+    }
+
+    #add-task-button {
+        font-size: 28px;
+    }
+
+    .checkbox {
+        transform: scale(2) translateY(-3px);
+    }
+
+    .delete-btn {
+        width: 3.5em;
+        height: 3.5em;
+    }
+}
